@@ -1,0 +1,55 @@
+<div class="container">
+    <h1 style="text-align: center;">
+        Burger Devourer
+    </h1>
+    <img class="center" src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png"
+        alt="Burger Icon">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h2 style="text-align: center;">Burgers that are not devoured!</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-lg-4">
+            <h2 style="text-align: center;">Add a Burger</h2>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="ca">Burger Type:</label>
+                    <input type="text" id="ca" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="devoured">Hungry?</label><br>
+                    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+                    <input type="radio" name="devoured" value="0"> TBD (To Be Devoured)
+                </div>
+
+                <button type="submit" class="btn btn-dark">Add Burger</button>
+            </form>
+        </div>
+
+        <div class="col-lg-4">
+            <h2 style="text-align: center;">Burgers that are devoured!</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+
+    </div>
+</div>
