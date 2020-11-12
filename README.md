@@ -1,5 +1,6 @@
 ## Burger Devourer!
 ![License badge](https://img.shields.io/badge/license-MIT-green)
+
 [For deployed version, click me](https://mighty-river-38472.herokuapp.com/)
 
 ## Description
