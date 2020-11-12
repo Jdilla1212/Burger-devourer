@@ -25,16 +25,9 @@
             <form class="create-form">
 
                 <div class="form-group">
-                    <label for="ca">Burger Type:</label>
-                    <input type="text" id="ca" name="name">
+                    <label for="burgertype">Burger Type:</label>
+                    <input type="text" id="burgertype" name="name">
                 </div>
-
-                <div class="form-group">
-                    <label for="devoured">Hungry?</label><br>
-                    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-                    <input type="radio" name="devoured" value="0"> TBD (To Be Devoured)
-                </div>
-
                 <button type="submit" class="btn btn-dark">Add Burger</button>
             </form>
         </div>
@@ -45,7 +38,9 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                {{> burgers/burger-block devoured=false}}
+                <li class="list-group-item">
+                    {{burger_name}}
+                </li>
                 {{/if}}
                 {{/each}}
             </ul>
